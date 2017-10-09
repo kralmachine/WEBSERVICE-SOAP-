@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ZIYARETCITAKIPOTOMASYONModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ZIYARETCITAKIPOTOMASYONModelStoreContainer">
+          <EntitySet Name="FIRMAADRES" EntityType="ZIYARETCITAKIPOTOMASYONModel.Store.FIRMAADRES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FIRMABILGILER" EntityType="ZIYARETCITAKIPOTOMASYONModel.Store.FIRMABILGILER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FIRMAKISILER" EntityType="ZIYARETCITAKIPOTOMASYONModel.Store.FIRMAKISILER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GFIRMABILGILER" EntityType="ZIYARETCITAKIPOTOMASYONModel.Store.GFIRMABILGILER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KODURET" EntityType="ZIYARETCITAKIPOTOMASYONModel.Store.KODURET" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KULLANICIBILGI" EntityType="ZIYARETCITAKIPOTOMASYONModel.Store.KULLANICIBILGI" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KULLANICIBILGILER" EntityType="ZIYARETCITAKIPOTOMASYONModel.Store.KULLANICIBILGILER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KULLANICIYETKILENDIRME" EntityType="ZIYARETCITAKIPOTOMASYONModel.Store.KULLANICIYETKILENDIRME" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ZIYARETCI" EntityType="ZIYARETCITAKIPOTOMASYONModel.Store.ZIYARETCI" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="FIRMAADRES">
+          <Key>
+            <PropertyRef Name="FIRMAADRESID" />
+          </Key>
+          <Property Name="FIRMAADRESID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SOKAK" Type="nvarchar" MaxLength="50" />
+          <Property Name="MAHALLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="BINA" Type="nvarchar" MaxLength="15" />
+          <Property Name="NO" Type="int" />
+          <Property Name="KAPINO" Type="int" />
+          <Property Name="GFIRMAID" Type="int" />
+        </EntityType>
+        <EntityType Name="FIRMABILGILER">
+          <Key>
+            <PropertyRef Name="FIRMAID" />
+          </Key>
+          <Property Name="FIRMAID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FIRMAAD" Type="nvarchar" MaxLength="100" />
+          <Property Name="FIRMATELEFON" Type="nvarchar" MaxLength="13" />
+          <Property Name="FIRMASAHIBIADSOYAD" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FIRMAKISILER">
+          <Key>
+            <PropertyRef Name="FIRMAKISIID" />
+          </Key>
+          <Property Name="FIRMAKISIID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FIRMAKISIAD" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIRMAKISISOYAD" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIRMAKISITELEFON" Type="nvarchar" MaxLength="13" />
+          <Property Name="FIRMAID" Type="int" />
+        </EntityType>
+        <EntityType Name="GFIRMABILGILER">
+          <Key>
+            <PropertyRef Name="GFIRMAID" />
+          </Key>
+          <Property Name="GFIRMAID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GFIRMAAD" Type="nvarchar" MaxLength="50" />
+          <Property Name="GFIRMATELEFON" Type="nvarchar" MaxLength="50" />
+          <Property Name="GFIRMASAHIBIADSOYAD" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="KODURET">
+          <Key>
+            <PropertyRef Name="KODID" />
+          </Key>
+          <Property Name="KODID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZIYARETCIISIM" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZIYARETCINO" Type="nvarchar" MaxLength="10" />
+          <Property Name="ZIYARETCIONAY" Type="bit" />
+        </EntityType>
+        <EntityType Name="KULLANICIBILGI">
+          <Key>
+            <PropertyRef Name="KULLANICIBILGI" />
+          </Key>
+          <Property Name="KULLANICIBILGI" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICIID" Type="int" />
+          <Property Name="KULLANICIIPNO" Type="nvarchar" MaxLength="20" />
+          <Property Name="KULLANICIMACNO" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="KULLANICIBILGILER">
+          <Key>
+            <PropertyRef Name="KULLANICIID" />
+          </Key>
+          <Property Name="KULLANICIID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICIAD" Type="nvarchar" MaxLength="50" />
+          <Property Name="KULLANICISOYAD" Type="nvarchar" MaxLength="50" />
+          <Property Name="KULLANICIEMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="KULLANICISIFRE" Type="nvarchar" MaxLength="50" />
+          <Property Name="KULLANICIONAY" Type="bit" />
+        </EntityType>
+        <EntityType Name="KULLANICIYETKILENDIRME">
+          <Key>
+            <PropertyRef Name="YETKIID" />
+          </Key>
+          <Property Name="YETKIID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICIID" Type="int" />
+          <Property Name="KULLANICIYETKIAD" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ZIYARETCI">
+          <Key>
+            <PropertyRef Name="ZIYARETCIID" />
+          </Key>
+          <Property Name="ZIYARETCIID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZIYARETCINO" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZIYARETCIKARTNO" Type="nvarchar" MaxLength="100" />
+          <Property Name="GIRISTARIH" Type="datetime" />
+          <Property Name="GIRISSAAT" Type="datetime" />
+          <Property Name="CIKISTARIH" Type="datetime" />
+          <Property Name="CIKISSAAT" Type="datetime" />
+          <Property Name="ZIYARETCIADSOYAD" Type="nvarchar" MaxLength="100" />
+          <Property Name="CINSIYET" Type="nvarchar" MaxLength="10" />
+          <Property Name="ZIYARETCITIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZIYARETCIFIRMA" Type="nvarchar" MaxLength="100" />
+          <Property Name="KIMLIKNO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZIYARETEDILENFIRMA" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZIYARETEDILENKISI" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZIYARETRESIM" Type="varbinary(max)" />
+          <Property Name="ZIYARETID" Type="int" />
+          <Property Name="ZIYARETEDILENID" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZIYARETCITAKIPOTOMASYONModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ZIYARETCITAKIPOTOMASYONEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KULLANICIBILGILER" EntityType="ZIYARETCITAKIPOTOMASYONModel.KULLANICIBILGILER" />
+          <EntitySet Name="FIRMAADRES" EntityType="ZIYARETCITAKIPOTOMASYONModel.FIRMAADRES" />
+          <EntitySet Name="FIRMABILGILER" EntityType="ZIYARETCITAKIPOTOMASYONModel.FIRMABILGILER" />
+          <EntitySet Name="FIRMAKISILER" EntityType="ZIYARETCITAKIPOTOMASYONModel.FIRMAKISILER" />
+          <EntitySet Name="GFIRMABILGILER" EntityType="ZIYARETCITAKIPOTOMASYONModel.GFIRMABILGILER" />
+          <EntitySet Name="KODURET" EntityType="ZIYARETCITAKIPOTOMASYONModel.KODURET" />
+          <EntitySet Name="KULLANICIBILGI" EntityType="ZIYARETCITAKIPOTOMASYONModel.KULLANICIBILGI" />
+          <EntitySet Name="KULLANICIYETKILENDIRME" EntityType="ZIYARETCITAKIPOTOMASYONModel.KULLANICIYETKILENDIRME" />
+          <EntitySet Name="ZIYARETCI" EntityType="ZIYARETCITAKIPOTOMASYONModel.ZIYARETCI" />
+        </EntityContainer>
+        <EntityType Name="KULLANICIBILGILER">
+          <Key>
+            <PropertyRef Name="KULLANICIID" />
+          </Key>
+          <Property Name="KULLANICIID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICIAD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="KULLANICISOYAD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="KULLANICIEMAIL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="KULLANICISIFRE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="KULLANICIONAY" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="FIRMAADRES">
+          <Key>
+            <PropertyRef Name="FIRMAADRESID" />
+          </Key>
+          <Property Type="Int32" Name="FIRMAADRESID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SOKAK" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAHALLE" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BINA" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NO" />
+          <Property Type="Int32" Name="KAPINO" />
+          <Property Type="Int32" Name="GFIRMAID" />
+        </EntityType>
+        <EntityType Name="FIRMABILGILER">
+          <Key>
+            <PropertyRef Name="FIRMAID" />
+          </Key>
+          <Property Type="Int32" Name="FIRMAID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FIRMAAD" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FIRMATELEFON" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FIRMASAHIBIADSOYAD" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FIRMAKISILER">
+          <Key>
+            <PropertyRef Name="FIRMAKISIID" />
+          </Key>
+          <Property Type="Int32" Name="FIRMAKISIID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FIRMAKISIAD" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FIRMAKISISOYAD" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FIRMAKISITELEFON" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FIRMAID" />
+        </EntityType>
+        <EntityType Name="GFIRMABILGILER">
+          <Key>
+            <PropertyRef Name="GFIRMAID" />
+          </Key>
+          <Property Type="Int32" Name="GFIRMAID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="GFIRMAAD" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GFIRMATELEFON" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GFIRMASAHIBIADSOYAD" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KODURET">
+          <Key>
+            <PropertyRef Name="KODID" />
+          </Key>
+          <Property Type="Int32" Name="KODID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ZIYARETCIISIM" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZIYARETCINO" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="ZIYARETCIONAY" />
+        </EntityType>
+        <EntityType Name="KULLANICIBILGI">
+          <Key>
+            <PropertyRef Name="KULLANICIBILGI1" />
+          </Key>
+          <Property Type="Int32" Name="KULLANICIBILGI1" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="KULLANICIID" />
+          <Property Type="String" Name="KULLANICIIPNO" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KULLANICIMACNO" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KULLANICIYETKILENDIRME">
+          <Key>
+            <PropertyRef Name="YETKIID" />
+          </Key>
+          <Property Type="Int32" Name="YETKIID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="KULLANICIID" />
+          <Property Type="String" Name="KULLANICIYETKIAD" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ZIYARETCI">
+          <Key>
+            <PropertyRef Name="ZIYARETCIID" />
+          </Key>
+          <Property Type="Int32" Name="ZIYARETCIID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ZIYARETCINO" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZIYARETCIKARTNO" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="GIRISTARIH" />
+          <Property Type="DateTime" Name="GIRISSAAT" />
+          <Property Type="DateTime" Name="CIKISTARIH" />
+          <Property Type="DateTime" Name="CIKISSAAT" />
+          <Property Type="String" Name="ZIYARETCIADSOYAD" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CINSIYET" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZIYARETCITIP" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZIYARETCIFIRMA" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KIMLIKNO" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZIYARETEDILENFIRMA" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZIYARETEDILENKISI" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="ZIYARETRESIM" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="ZIYARETID" />
+          <Property Type="Int32" Name="ZIYARETEDILENID" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ZIYARETCITAKIPOTOMASYONModelStoreContainer" CdmEntityContainer="ZIYARETCITAKIPOTOMASYONEntities">
+          <EntitySetMapping Name="KULLANICIBILGILER">
+            <EntityTypeMapping TypeName="ZIYARETCITAKIPOTOMASYONModel.KULLANICIBILGILER">
+              <MappingFragment StoreEntitySet="KULLANICIBILGILER">
+                <ScalarProperty Name="KULLANICIID" ColumnName="KULLANICIID" />
+                <ScalarProperty Name="KULLANICIAD" ColumnName="KULLANICIAD" />
+                <ScalarProperty Name="KULLANICISOYAD" ColumnName="KULLANICISOYAD" />
+                <ScalarProperty Name="KULLANICIEMAIL" ColumnName="KULLANICIEMAIL" />
+                <ScalarProperty Name="KULLANICISIFRE" ColumnName="KULLANICISIFRE" />
+                <ScalarProperty Name="KULLANICIONAY" ColumnName="KULLANICIONAY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FIRMAADRES">
+            <EntityTypeMapping TypeName="ZIYARETCITAKIPOTOMASYONModel.FIRMAADRES">
+              <MappingFragment StoreEntitySet="FIRMAADRES">
+                <ScalarProperty Name="GFIRMAID" ColumnName="GFIRMAID" />
+                <ScalarProperty Name="KAPINO" ColumnName="KAPINO" />
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="BINA" ColumnName="BINA" />
+                <ScalarProperty Name="MAHALLE" ColumnName="MAHALLE" />
+                <ScalarProperty Name="SOKAK" ColumnName="SOKAK" />
+                <ScalarProperty Name="FIRMAADRESID" ColumnName="FIRMAADRESID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FIRMABILGILER">
+            <EntityTypeMapping TypeName="ZIYARETCITAKIPOTOMASYONModel.FIRMABILGILER">
+              <MappingFragment StoreEntitySet="FIRMABILGILER">
+                <ScalarProperty Name="FIRMASAHIBIADSOYAD" ColumnName="FIRMASAHIBIADSOYAD" />
+                <ScalarProperty Name="FIRMATELEFON" ColumnName="FIRMATELEFON" />
+                <ScalarProperty Name="FIRMAAD" ColumnName="FIRMAAD" />
+                <ScalarProperty Name="FIRMAID" ColumnName="FIRMAID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FIRMAKISILER">
+            <EntityTypeMapping TypeName="ZIYARETCITAKIPOTOMASYONModel.FIRMAKISILER">
+              <MappingFragment StoreEntitySet="FIRMAKISILER">
+                <ScalarProperty Name="FIRMAID" ColumnName="FIRMAID" />
+                <ScalarProperty Name="FIRMAKISITELEFON" ColumnName="FIRMAKISITELEFON" />
+                <ScalarProperty Name="FIRMAKISISOYAD" ColumnName="FIRMAKISISOYAD" />
+                <ScalarProperty Name="FIRMAKISIAD" ColumnName="FIRMAKISIAD" />
+                <ScalarProperty Name="FIRMAKISIID" ColumnName="FIRMAKISIID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GFIRMABILGILER">
+            <EntityTypeMapping TypeName="ZIYARETCITAKIPOTOMASYONModel.GFIRMABILGILER">
+              <MappingFragment StoreEntitySet="GFIRMABILGILER">
+                <ScalarProperty Name="GFIRMASAHIBIADSOYAD" ColumnName="GFIRMASAHIBIADSOYAD" />
+                <ScalarProperty Name="GFIRMATELEFON" ColumnName="GFIRMATELEFON" />
+                <ScalarProperty Name="GFIRMAAD" ColumnName="GFIRMAAD" />
+                <ScalarProperty Name="GFIRMAID" ColumnName="GFIRMAID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KODURET">
+            <EntityTypeMapping TypeName="ZIYARETCITAKIPOTOMASYONModel.KODURET">
+              <MappingFragment StoreEntitySet="KODURET">
+                <ScalarProperty Name="ZIYARETCIONAY" ColumnName="ZIYARETCIONAY" />
+                <ScalarProperty Name="ZIYARETCINO" ColumnName="ZIYARETCINO" />
+                <ScalarProperty Name="ZIYARETCIISIM" ColumnName="ZIYARETCIISIM" />
+                <ScalarProperty Name="KODID" ColumnName="KODID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KULLANICIBILGI">
+            <EntityTypeMapping TypeName="ZIYARETCITAKIPOTOMASYONModel.KULLANICIBILGI">
+              <MappingFragment StoreEntitySet="KULLANICIBILGI">
+                <ScalarProperty Name="KULLANICIMACNO" ColumnName="KULLANICIMACNO" />
+                <ScalarProperty Name="KULLANICIIPNO" ColumnName="KULLANICIIPNO" />
+                <ScalarProperty Name="KULLANICIID" ColumnName="KULLANICIID" />
+                <ScalarProperty Name="KULLANICIBILGI1" ColumnName="KULLANICIBILGI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KULLANICIYETKILENDIRME">
+            <EntityTypeMapping TypeName="ZIYARETCITAKIPOTOMASYONModel.KULLANICIYETKILENDIRME">
+              <MappingFragment StoreEntitySet="KULLANICIYETKILENDIRME">
+                <ScalarProperty Name="KULLANICIYETKIAD" ColumnName="KULLANICIYETKIAD" />
+                <ScalarProperty Name="KULLANICIID" ColumnName="KULLANICIID" />
+                <ScalarProperty Name="YETKIID" ColumnName="YETKIID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZIYARETCI">
+            <EntityTypeMapping TypeName="ZIYARETCITAKIPOTOMASYONModel.ZIYARETCI">
+              <MappingFragment StoreEntitySet="ZIYARETCI">
+                <ScalarProperty Name="ZIYARETEDILENID" ColumnName="ZIYARETEDILENID" />
+                <ScalarProperty Name="ZIYARETID" ColumnName="ZIYARETID" />
+                <ScalarProperty Name="ZIYARETRESIM" ColumnName="ZIYARETRESIM" />
+                <ScalarProperty Name="ZIYARETEDILENKISI" ColumnName="ZIYARETEDILENKISI" />
+                <ScalarProperty Name="ZIYARETEDILENFIRMA" ColumnName="ZIYARETEDILENFIRMA" />
+                <ScalarProperty Name="KIMLIKNO" ColumnName="KIMLIKNO" />
+                <ScalarProperty Name="ZIYARETCIFIRMA" ColumnName="ZIYARETCIFIRMA" />
+                <ScalarProperty Name="ZIYARETCITIP" ColumnName="ZIYARETCITIP" />
+                <ScalarProperty Name="CINSIYET" ColumnName="CINSIYET" />
+                <ScalarProperty Name="ZIYARETCIADSOYAD" ColumnName="ZIYARETCIADSOYAD" />
+                <ScalarProperty Name="CIKISSAAT" ColumnName="CIKISSAAT" />
+                <ScalarProperty Name="CIKISTARIH" ColumnName="CIKISTARIH" />
+                <ScalarProperty Name="GIRISSAAT" ColumnName="GIRISSAAT" />
+                <ScalarProperty Name="GIRISTARIH" ColumnName="GIRISTARIH" />
+                <ScalarProperty Name="ZIYARETCIKARTNO" ColumnName="ZIYARETCIKARTNO" />
+                <ScalarProperty Name="ZIYARETCINO" ColumnName="ZIYARETCINO" />
+                <ScalarProperty Name="ZIYARETCIID" ColumnName="ZIYARETCIID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model" ZoomLevel="55">
+        <EntityTypeShape EntityType="ZIYARETCITAKIPOTOMASYONModel.KULLANICIBILGILER" Width="1.5" PointX="0.75" PointY="0.75" Height="2.172587890625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZIYARETCITAKIPOTOMASYONModel.FIRMAADRES" Width="1.5" PointX="3.75" PointY="0.75" Height="2.3648893229166665" />
+        <EntityTypeShape EntityType="ZIYARETCITAKIPOTOMASYONModel.FIRMABILGILER" Width="1.5" PointX="0.75" PointY="3.75" Height="1.787985026041667" />
+        <EntityTypeShape EntityType="ZIYARETCITAKIPOTOMASYONModel.FIRMAKISILER" Width="1.5" PointX="2.75" PointY="3.625" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="ZIYARETCITAKIPOTOMASYONModel.GFIRMABILGILER" Width="1.5" PointX="4.75" PointY="3.5" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ZIYARETCITAKIPOTOMASYONModel.KODURET" Width="1.5" PointX="5.75" PointY="0.75" Height="1.7879850260416665" />
+        <EntityTypeShape EntityType="ZIYARETCITAKIPOTOMASYONModel.KULLANICIBILGI" Width="1.5" PointX="6.75" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ZIYARETCITAKIPOTOMASYONModel.KULLANICIYETKILENDIRME" Width="1.5" PointX="4.25" PointY="6" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="ZIYARETCITAKIPOTOMASYONModel.ZIYARETCI" Width="1.5" PointX="0.75" PointY="6.125" Height="4.2879036458333353" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
